@@ -1,183 +1,197 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+About Us
+{% endblock title %}
 
-     <title>About Us</title>
-     {% load static %}
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="author" content="">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+{% block content %}
 
-     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-     <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+<!-- HERO -->
+<section class="hero d-flex flex-column justify-content-center align-items-center" id="home"
+         style="background-image: url('../static/images/hero-bg.jpg');">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto col-12">
+                <div class="hero-text mt-5 text-center">
+                    <h6 data-aos="fade-up" data-aos-delay="300">A New Way to Build a Healthy LifeStyle!</h6>
+                    <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">About-Us</h1>
+                    <a href="#about" class="btn custom-btn mt-3" data-aos="fade-up" data-aos-delay="600">About Us</a>
+                    <a href="#trainers" class="btn custom-btn bordered mt-3" data-aos="fade-up" data-aos-delay="600">Our
+                        Trainers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-     <!-- MAIN CSS -->
-     <link rel="stylesheet" href="{% static 'css/style-dm.css' %}">
-     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Work+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!-- Trainers of Clubs -->
+<div class="site-section" id="trainers">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center mb-5 section-heading" data-aos="fade-up" data-aos-delay="500">
+                <h2 class="mb-5">Trainers</h2>
+            </div>
+        </div>
 
-</head>
-<body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+        <div class="row">
 
-    <!-- MENU BAR -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
+            <!-- Academy -->
+            {% for coach in coachs %}
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="400">
+                <div class="hotel-room text-center">
+                    <a href="#" class="d-block mb-4 thumbnail"><img src="{{ coach.img.url }}" alt="Image"
+                                                                    class="img-fluid rounded-circle w-50"></a>
+                    <div class="p-4">
+                        <h3 class="heading mb-0 h5 "><a href="#" class="text-black">{{ coach.name }}</a></h3>
+                        <p class="mb-3">Academy : {{ coach.academy }}</p>
+                        <p class="mb-3"><b>Experience : {{ coach.exp }}</b></p>
+                        <p class="mb-3">Vinyasa Flow, Yin, Meditation</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta labore recusandae soluta
+                            quis.</p>
+                        <p><a href="#" class="text-primary">Read More <span class="icon-arrow-right small"></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
 
-            <a class="navbar-brand" href="#home">Verywell Health</a>
+            <!-- fitness -->
+            {% for trainer in trainers %}
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="500">
+                <div class="hotel-room text-center">
+                    <a href="#" class="d-block mb-4 thumbnail"><img src="{{ trainer.img.url }}" alt="Image"
+                                                                    class="img-fluid rounded-circle w-50"></a>
+                    <div class="p-4">
+                        <h3 class="heading mb-0 h5 "><a href="#" class="text-black">{{ trainer.name }}</a></h3>
+                        <p class="mb-3">Gym : {{ trainer.fitness }}</p>
+                        <p class="mb-3"><b>Experience : {{ trainer.exp }}</b></p>
+                        <p class="mb-3">Vinyasa Flow, Yin, Meditation</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta labore recusandae soluta
+                            quis.</p>
+                        <p><a href="#" class="text-primary">Read More <span class="icon-arrow-right small"></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <!-- yoga -->
+            {% for guru in gurus %}
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="600">
+                <div class="hotel-room text-center">
+                    <a href="#" class="d-block mb-4 thumbnail"><img src="{{ guru.img.url }}" alt="Image"
+                                                                    class="img-fluid rounded-circle w-50"></a>
+                    <div class="p-4">
+                        <h3 class="heading mb-0 h5 "><a href="#" class="text-black">{{ guru.name }}</a></h3>
+                        <p class="mb-3">Club : {{ guru.yoga }}</p>
+                        <p class="mb-3"><b>Experience : {{ guru.exp }}</b></p>
+                        <p class="mb-3">Vinyasa Flow, Yin, Meditation</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta labore recusandae soluta
+                            quis.</p>
+                        <p><a href="#" class="text-primary">Read More <span class="icon-arrow-right small"></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-lg-auto">
-                    <li class="nav-item">
-                        <a href="{% url 'index' %}" class="nav-link smoothScroll">Home</a>
-                    </li>
+        </div>
+    </div>
+</div>
 
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link smoothScroll">About Us</a>
-                    </li>
+<section id="counting"></section>
 
-                    <li class="nav-item">
-                        <a href="#class" class="nav-link smoothScroll">Classes</a>
-                    </li>
+<!-- Our Services -->
+<section id="facts">
+    <div class="container">
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                <h2>Our Services</h2>
+            </div>
+        </div>
+        <div class="row counters">
 
-                    <li class="nav-item">
-                        <a href="{% url 'academy' %}" class="nav-link smoothScroll">Sports</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'fitness' %}" class="nav-link smoothScroll">Fitness</a>
-                    </li>
+            <div class="col-lg-3 col-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                <span data-toggle="counter-up" class="counter-plus" data-count="{{ num_trainers }}">0</span>
+                <p>Trainers</p>
+            </div>
 
-                    <li class="nav-item">
-                        <a href="{% url 'center' %}" class="nav-link smoothScroll">Yoga</a>
-                    </li>
+            <div class="col-lg-3 col-6 text-center" data-aos="fade-up" data-aos-delay="500">
+                <span data-toggle="counter-up" class="counter-plus" data-count="{{ num_clubs }}">0</span>
+                <p>Clubs</p>
+            </div>
 
-                </ul>
+            <div class="col-lg-3 col-6 text-center" data-aos="fade-up" data-aos-delay="600">
+                <span data-toggle="counter-up" class="counter-plus" data-count="{{ num_trainings }}">0</span>
+                <p>Total Trainings</p>
+            </div>
 
-                <ul class="social-icon ml-lg-3">
-                    <li><a href="#" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-instagram"></a></li>
-                </ul>
+            <div class="col-lg-3 col-6 text-center" data-aos="fade-up" data-aos-delay="700">
+                <span data-toggle="counter-up" class="counter-plus" data-count="148">0</span>
+                <p>Joined People</p>
             </div>
 
         </div>
-    </nav>
-
-     <!-- ABOUT -->
-     <div>
-     <section class="about section" id="about">
-               <div class="container">
-                    <div class="row">
-
-                            <div class="mt-lg-5 mb-lg-0 mb-4 col-lg-5 col-md-10 mx-auto col-12">
-                                <h2 class="mb-4" data-aos="fade-up" data-aos-delay="300">Hello, we are Gymso</h2>
-
-                                <p data-aos="fade-up" data-aos-delay="400">You are NOT allowed to redistribute this HTML template downloadable ZIP file on any template collection site. You are allowed to use this template for your personal or business websites.</p>
-
-                                <p data-aos="fade-up" data-aos-delay="500">If you have any question regarding <a rel="nofollow" href="https://www.tooplate.com/view/2119-gymso-fitness" target="_parent">Gymso Fitness HTML template</a>, you can <a rel="nofollow" href="https://www.tooplate.com/contact" target="_parent">contact Tooplate</a> immediately. Thank you.</p>
-
-                            </div>
-
-                            <div class="ml-lg-auto col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="700">
-                                <div class="team-thumb">
-                                    <img src="{% static 'images/team/team-image.jpg' %}" class="img-fluid" alt="Trainer">
-
-                                    <div class="team-info d-flex flex-column">
-
-                                        <h3>Mary Yan</h3>
-                                        <span>Yoga Instructor</span>
-
-                                        <ul class="social-icon mt-3">
-                                            <li><a href="#" class="fa fa-twitter"></a></li>
-                                            <li><a href="#" class="fa fa-instagram"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="800">
-                                <div class="team-thumb">
-                                    <img src="{% static 'images/team/team-image01.jpg' %}" class="img-fluid" alt="Trainer">
-
-                                    <div class="team-info d-flex flex-column">
-
-                                        <h3>Catherina</h3>
-                                        <span>Body trainer</span>-->
-
-                                        <ul class="social-icon mt-3">
-                                            <li><a href="#" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" class="fa fa-facebook"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                    </div>
-               </div>
-     </section>
     </div>
+</section>
 
-    <footer class="site-footer">
-        <div class="container">
-             <div class="row">
+<!-- ABOUT -->
+<section class="about section" id="about">
+    <div class="container">
+        <div class="row">
 
-                  <div class="ml-auto col-lg-4 col-md-5">
-                      <p class="copyright-text">Copyright &copy; Sports Academy Info Co.
-                  </div>
+            <div class="mt-lg-5 mb-lg-0 mb-4 col-lg-5 col-md-10 mx-auto col-12">
+                <h2 class="mb-4" data-aos="fade-up" data-aos-delay="300">Hello, we are Developers</h2>
+                <p data-aos="fade-up" data-aos-delay="400">We love to build new things and getting hands dirty with new
+                    technologies. We learn some new technologies and try to implementing in real life applications.</p>
+                <br>
+                <p data-aos="fade-up" data-aos-delay="500">We develop this website to give information about health
+                    related activities, which are near to you. So you can easily find the sources and we will trying our
+                    best to help you out.</p>
+            </div>
 
-                  <div class="d-flex justify-content-center mx-auto col-lg-5 col-md-7 col-12">
-                      <p class="mr-4">
-                          <i class="fa fa-envelope-o mr-1"></i>
-                          <a href="mailto:dishenmakwana.dm@gmail.com">dishenmakwana.dm@gmail.com</a>
-                          <br>
-                          <i class="fa fa-envelope-o mr-1"></i>
-                          <a href="mailto:dhruvvachhani.dv@gmail.com">dhruvvachhani.dv@gmail.com</a>
-                      </p>
+            <div class="ml-lg-auto col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
+                <div class="team-thumb">
+                    <img src="{% static 'images/developers/dishen_photo.jpg' %}" class="img-fluid" alt="Trainer">
 
-                      <p>
-                          <a class="fa fa-phone mr-1">
-                              +91-8758516876  </a> 
-                          <br>
-                          <a class="fa fa-phone mr-1">
-                              +91-9427723843  </a>
-                      </p>
-                  </div>
+                    <div class="team-info d-flex flex-column">
 
-             </div>
+                        <h3>DISHEN MAKWANA</h3>
+                        <span>Django Developer</span>
+                        <span>Front-end Developer</span>
+
+                        <ul class="social-icon mt-3">
+                            <li><a href="https://github.com/DishenMakwana" class="fa fa-github"></a></li>
+                            <li><a href="https://linkedin.com/in/dishen-makwana" class="fa fa-linkedin"></a></li>
+                            <li><a href="https://www.instagram.com/i_dishen_/" class="fa fa-instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up"
+                 data-aos-delay="800">
+                <div class="team-thumb">
+                    <img src="{% static 'images/developers/dhruv_photo.jpeg' %}" class="img-fluid" alt="Trainer">
+
+                    <div class="team-info d-flex flex-column">
+
+                        <h3>DHRUV VACHHANI</h3>
+                        <span>Django Developer</span>
+                        <span>Front-end Developer</span>
+
+                        <ul class="social-icon mt-4">
+                            <li><a href="https://github.com/dhruv-vachhani" class="fa fa-github"></a></li>
+                            <li><a href="https://linkedin.com/in/dhruv-vachhani" class="fa fa-linkedin"></a></li>
+                            <li><a href="https://www.instagram.com/dhru._.v/" class="fa fa-instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
-   </footer>
+    </div>
+</section>
 
-   <!-- SCRIPTS -->
-   <script src="{% static 'js/jquery.min.js' %}"></script>
-   <script src="{% static 'js/bootstrap.min.js' %}"></script>
-   <script src="{% static 'js/aos.js' %}"></script>
-   <script src="{% static 'js/smoothscroll.js' %}"></script>
-   <script src="{% static 'js/custom.js' %}"></script>
-   <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
-  <script src="{% static 'js/jquery-ui.js' %}"></script>
-  <script src="{% static 'js/popper.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
-  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
-  <script src="{% static 'js/aos.js' %}"></script>
-  <script src="{% static 'js/mediaelement-and-player.min.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
-
-</body>
-</html>
+{% endblock %}

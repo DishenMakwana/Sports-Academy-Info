@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Classes
+{% endblock title %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero d-flex flex-column justify-content-center align-items-center" id="home"
+         style="background-image: url('../static/images/hero-bg.jpg');">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto col-12">
+                <div class="hero-text mt-5 text-center">
+                    <h6 data-aos="fade-up" data-aos-delay="300">A New Way to Build a Healthy LifeStyle!</h6>
+                    <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">Classes</h1>
+                    <a href="#classes" class="btn custom-btn bordered mt-3" data-aos="fade-up" data-aos-delay="700">
+                        View Classes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+<br>
+<br>
+
+<!-- Classes Timing -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto text-center mb-5 section-heading" id="classes" data-aos="fade-up"
+             data-aos-delay="300">
+            <h2 class="mb-5">Classes</h2>
+        </div>
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-12">
+            <div class="site-block-half d-flex">
+                <div class="image bg-image" style="background-image: url(../static/images/sports/blog2.png);"></div>
+                <div class="text py-5">
+                    <h2 class="font-family-serif h4 mb-3">Rhythm &amp; Routine</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti odio laboriosam in recusandae
+                        expedita.</p>
+                    <h2 class="font-family-serif h4 mb-3">Time:</h2>
+                    <p>
+                        <span class="d-block">Monday &mdash; Saturday</span>
+                        <span class="d-block">6:00 am &mdash; 11:00 am</span>
+                        <span class="d-block">4:00 pm &mdash; 7:00 pm</span>
+                    </p>
+                    <h2 class="font-family-serif h4 mb-3">Instructor:</h2>
+                    <p>
+                        Rahul Dravid, Anil Kumbale
+                    </p>
+                    <p><a href="#" class="btn btn-primary pill px-4 py-2 text-white" data-aos="fade-up"
+                          data-aos-delay="400">Enroll Now</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-12">
+            <div class="site-block-half d-flex">
+                <div class="image bg-image order-md-2"
+                     style="background-image: url(../static/images/yoga/img_2.jpg);"></div>
+                <div class="text py-5 order-md-1">
+                    <h2 class="font-family-serif h4 mb-3">Yoga to Build Resilience</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti odio laboriosam in recusandae
+                        expedita.</p>
+                    <h2 class="font-family-serif h4 mb-3">Time:</h2>
+                    <p>
+                        <span class="d-block">Monday &mdash; Saturday</span>
+                        <span class="d-block">6:00 am &mdash; 8:00 am</span>
+                        <span class="d-block">4:00 pm &mdash; 6:00 pm</span>
+                    </p>
+                    <h2 class="font-family-serif h4 mb-3">Instructor:</h2>
+                    <p>
+                        Jason Roy, Candly Miller
+                    </p>
+                    <p><a href="#" class="btn btn-primary pill px-4 py-2 text-white" data-aos="fade-up"
+                          data-aos-delay="500">Enroll Now</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="500">
+        <div class="col-12">
+            <div class="site-block-half d-flex">
+                <div class="image bg-image"
+                     style="background-image: url(../static/images/fitness/program-2.jpg);">
+                </div>
+                <div class="text py-5">
+                    <h2 class="font-family-serif h4 mb-3">Hard Core Training</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti odio laboriosam in recusandae
+                        expedita.</p>
+                    <h2 class="font-family-serif h4 mb-3">Time:</h2>
+                    <p>
+                        <span class="d-block">Monday &mdash; Saturday</span>
+                        <span class="d-block">6:00 am &mdash; 10:30 am</span>
+                        <span class="d-block">6:00 pm &mdash; 11:30 pm</span>
+                    </p>
+                    <h2 class="font-family-serif h4 mb-3">Instructor:</h2>
+                    <p>
+                        Jason Snyder, Kathryn Miller
+                    </p>
+                    <p><a href="#" class="btn btn-primary pill px-4 py-2 text-white" data-aos="fade-up"
+                          data-aos-delay="600">Enroll Now</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<section id="counting"></section>
+
+<!-- Our Services -->
+<section id="facts">
+    <div class="container">
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                <h2>Our Services</h2>
+            </div>
+        </div>
+        <div class="row counters">
+
+            <div class="col-lg-3 col-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                <span data-toggle="counter-up" class="counter-plus" data-count="{{ num_trainers }}">0</span>
+                <p>Trainers</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center" data-aos="fade-up" data-aos-delay="500">
+                <span data-toggle="counter-up" class="counter-plus" data-count="{{ num_clubs }}">0</span>
+                <p>Academys</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center" data-aos="fade-up" data-aos-delay="600">
+                <span data-toggle="counter-up" class="counter-plus" data-count="{{ num_training }}">0</span>
+                <p>Total Trainings</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center" data-aos="fade-up" data-aos-delay="700">
+                <span data-toggle="counter-up" class="counter-plus" data-count="{{ num_training_type }}">0</span>
+                <p>Total Training Types</p>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+</section>
+
+<!-- People Review -->
+<div class="site-section block-14 bg-light">
+    <div class="container">
+        <div class="row" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                <h2>What People Say</h2>
+            </div>
+        </div>
+
+        <div class="nonloop-block-14 owl-carousel" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="p-4">
+                <div class="d-flex block-testimony">
+                    <div class="person mr-3">
+                        <img src="{% static 'images/yoga/person_1.jpg' %}" alt="Image" class="img-fluid rounded">
+                    </div>
+                    <div>
+                        <h2 class="h5">Katie Johnson</h2>
+                        <blockquote>&ldquo;Yoga is a systematic practice of physical exercise, breath control,
+                            relaxation, diet control, and positive thinking and meditation aimed at developing harmony
+                            in the body, mind, and environment!&rdquo;
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="d-flex block-testimony">
+                    <div class="person mr-3">
+                        <img src="{% static 'images/yoga/person_2.jpg' %}" alt="Image" class="img-fluid rounded">
+                    </div>
+                    <div>
+                        <h2 class="h5">Jane Mars</h2>
+                        <blockquote>&ldquo;The origin is a Sanskrit word Yog meaning union. Yoga is a union of the organ
+                            systems in the body with the consciousness in the mind.!&rdquo;
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="d-flex block-testimony">
+                    <div class="person mr-3">
+                        <img src="{% static 'images/yoga/person_3.jpg' %}" alt="Image" class="img-fluid rounded">
+                    </div>
+                    <div>
+                        <h2 class="h5">Shane Holmes</h2>
+                        <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium
+                            qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="d-flex block-testimony">
+                    <div class="person mr-3">
+                        <img src="{% static 'images/yoga/person_4.jpg' %}" alt="Image" class="img-fluid rounded">
+                    </div>
+                    <div>
+                        <h2 class="h5">Mark Johnson</h2>
+                        <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium
+                            qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
